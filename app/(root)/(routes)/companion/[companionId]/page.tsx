@@ -12,7 +12,7 @@ interface CompanionProps {
 };
 
 
-const page = async ({ params }: CompanionProps) => {
+const page: React.FC<CompanionProps> = async ({ params }) => {
 
   const { userId } = auth()
   
