@@ -1,4 +1,4 @@
-# Build a SaaS AI Companion with Next.js 13, React, Tailwind, Prisma, Stripe | Full Tutorial 2023
+# Build a SaaS AI DevCore with Next.js 13, React, Tailwind, Prisma, Stripe 
 
 
 Features:
@@ -29,7 +29,7 @@ Features:
 ### Cloning the repository
 
 ```shell
-git clone https://github.com/AntonioErdeljac/next13-ai-saas.git
+git clone 
 ```
 
 ### Install packages
