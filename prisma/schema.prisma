@@ -1,40 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+  previewFeatures = ["fullTextSearch","fullTextIndex"]
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url = env("DATABASE_URL")
-
 }
 
+
 model Category {
-  id            String @id @default(auto()) @map("_id") @db.ObjectId
-  name          String
+  id            String @id @default(uuid())
+  name          String 
   companions    Companion[]
 }
 
 model Companion {
-  id            String @id @default(auto()) @map("_id") @db.ObjectId
-  userId        String @db.ObjectId
-  userName      String
-  src           String
-  name          String 
-  description   String
-  instructions  String 
-  seed          String 
+  id            String @id @default(uuid())
+  userId        String  
+  username      String  
+  src           String  
+  name          String @db.Text
+  description   String  
+  instructions  String @db.Text
+  seed          String @db.Text
 
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
-
+  categoryId    String 
   category      Category @relation(fields: [categoryId], references: [id])
-  categoryId    String @db.ObjectId
-
-  messages      Message[]
+  messages Message[]
 
   @@index([categoryId])
-  @@fulltext([name])
+  
+
 }
 
 enum Role {
@@ -42,26 +45,28 @@ enum Role {
   system
 }
 
+
 model Message {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
-  role        Role   
-  content     String   
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id String @id @default(uuid())
+  role Role
+  content String @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  companionId String @db.ObjectId
-  userId      String
+  companionId String
+  userId String
 
-  companion   Companion @relation(fields: [companionId], references: [id], onDelete: Cascade)
-  
+  companion Companion @relation(fields: [companionId], references: [id], onDelete: Cascade)
+
   @@index([companionId])
 }
 
-model UserSubscription {
-  id                        String @id @default(auto()) @map("_id") @db.ObjectId
-  userId                    String    @unique
-  stripeCustomerId          String?   @unique @map(name: "stripe_customer_id")
-  stripeSubscriptionId      String?   @unique @map(name: "stripe_subscription_id")
-  stripePriceId             String?   @map(name: "stripe_price_id")
-  stripeCurrentPeriodEnd    DateTime? @map(name: "stripe_current_period_end")
+
+model UserSubscription{
+  id                      String @id @default(uuid())
+  userId                  String @unique
+  stripeCustomerId        String? @unique @map(name:"stripe_customer_id")
+  stripeSubscriptionId    String? @unique @map(name:"stripe_subscription_id")
+  stripePriceId           String? @unique @map(name:"stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @unique @map(name:"stripe_current_period_end")
 }
