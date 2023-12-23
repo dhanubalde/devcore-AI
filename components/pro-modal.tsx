@@ -22,7 +22,9 @@ const ProModal = () => {
   },[])
 
 
-
+  if (!isMounted) { 
+    return null
+  }
 
   const onSubscribe = async () => { 
     try {
@@ -41,9 +43,7 @@ const ProModal = () => {
     }
   }
 
-  if (!isMounted) { 
-    return null
-  }
+ 
   return (
     <Dialog open={proModal.isOpen} onOpenChange={proModal.onClose}>
       <DialogContent>
