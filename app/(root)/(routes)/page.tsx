@@ -4,14 +4,6 @@ import SearchInput from "@/components/search-input";
 import prismadb from "@/lib/prismadb";
 import { cookies } from 'next/headers'
  
-async function getCookieData() {
-  const cookieData = cookies().getAll()
-  return new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(cookieData)
-    }, 1000)
-  )
-}
 
 
 
@@ -26,7 +18,7 @@ interface RootPageProps {
 
 
 const RootPage = async ({ searchParams }: RootPageProps) => {
-  const cookieData = await getCookieData()
+ 
   const data = await prismadb.companion.findMany({
     where: {
       categoryId: searchParams.categoryId,
