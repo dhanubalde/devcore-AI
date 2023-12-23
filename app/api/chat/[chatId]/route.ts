@@ -152,8 +152,7 @@ export async function POST(
     return new StreamingTextResponse(s);
 
   } catch (error) { 
-    console.log("CHAT_POST",error);
-    
+  
     return new NextResponse("Internal Error", {status: 500})
   }
 }

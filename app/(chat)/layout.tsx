@@ -1,5 +1,5 @@
 
-
+"use client"
 interface layoutProps { 
   children: React.ReactNode
 }

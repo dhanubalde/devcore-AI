@@ -29,7 +29,7 @@ export async function DELETE(
     return NextResponse.json(companion)
 
   } catch (error) { 
-    console.log("[DEVCORE_DELETE]", error);
+    
     return new NextResponse("Internal Error", {status: 500})
   } 
 }
@@ -86,7 +86,6 @@ export async function PATCH(
 
     return NextResponse.json(companion);
   } catch (error) { 
-    console.log("DEVCORE_PATCH", error);
     return new NextResponse("Internal Error", {status: 500})
     
   }
