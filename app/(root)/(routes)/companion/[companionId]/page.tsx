@@ -1,6 +1,5 @@
 import prismadb from "@/lib/prismadb";
 import { CompanionForm } from "./components/companion-form";
-import Categories from "@/components/categories";
 import { auth, redirectToSignIn } from "@clerk/nextjs";
 
 
