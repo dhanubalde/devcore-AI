@@ -29,7 +29,7 @@ Features:
 ### Cloning the repository
 
 ```shell
-git clone https://github.com/AntonioErdeljac/next13-ai-saas.git
+git clone 
 ```
 
 ### Install packages
