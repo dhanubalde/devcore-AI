@@ -5,7 +5,7 @@ import { checkSubscription } from "@/lib/subscription";
 
 // import { checkSubscription } from "@/lib/subscription"
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 const RootLayout = async ({
     children
