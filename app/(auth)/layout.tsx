@@ -9,7 +9,7 @@ const layout: React.FC<layoutProps> = ({
 }) => {
   return (
     <div className=" flex flex-col bg-secondary items-center justify-center h-full gap-6">
-          <h1 className="text-3xl font-bold">Devcore.Ai</h1>
+          <h1 className="text-3xl font-bold">Devcore AI</h1>
           {children}
     </div>
   )
