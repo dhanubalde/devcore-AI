@@ -14,7 +14,7 @@ interface CompanionProps {
 };
 
 
-const page: React.FC<CompanionProps> = async ({ params }) => {
+const CompanionPage: React.FC<CompanionProps> = async ({ params }) => {
 
   const { userId } = auth()
   
@@ -39,4 +39,4 @@ const page: React.FC<CompanionProps> = async ({ params }) => {
   )
 }
 
-export default page
+export default CompanionPage
