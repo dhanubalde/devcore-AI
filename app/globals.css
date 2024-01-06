@@ -12,6 +12,7 @@ body,
 /* width */
 ::-webkit-scrollbar {
   width: 0;
+  overflow: auto;
 }
 
 /* Track */

@@ -31,13 +31,14 @@ const Categories: React.FC<CategoriesProps> = ({
 
 
   return (
-    <div className=" w-full overflow-x-auto space-x-2 flex p-1">
+    <div className=" w-full overflow-x-auto space-x-2 flex p-3">
       <button
         onClick={() => onClick(undefined)}
         className={cn(`
         flex
         items-center
         text-center
+        
         text-xs
         md:text-sm
         px-2
