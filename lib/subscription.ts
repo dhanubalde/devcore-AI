@@ -15,7 +15,7 @@ export const checkSubscription = async () => {
     where: {
       userId: userId,
     },
-    select: {
+    select: { 
       stripeSubscriptionId: true,
       stripeCurrentPeriodEnd: true,
       stripeCustomerId: true,

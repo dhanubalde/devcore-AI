@@ -13,7 +13,7 @@ export const MobileSidebar = ({ isPro}: MobileSidebarProps) => {
       <SheetTrigger className="md:hidden pr-4">
         <Menu />
       </SheetTrigger>
-      <SheetContent side="left" className="p-0 bg-secondary pt-10 w-32">
+      <SheetContent side="left" className="p-0 bg-secondary pt-10 w-25">
         <Sidebar isPro={isPro} />
       </SheetContent>
     </Sheet>
