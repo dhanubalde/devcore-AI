@@ -60,7 +60,7 @@ const ProModal = () => {
           <p className="text-2xl font-medium">
             $11
             <span className=" text-sm font-normal">
-              .99 / mo
+              .99 / months
             </span>
           </p>
           <Button disabled={loading} onClick={onSubscribe} variant="premium">
